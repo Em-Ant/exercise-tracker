@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <!-- <link rel="shortcut icon" href="images/favicon.ico" /> -->
+  <link rel="stylesheet" type="text/css" href="public/style.css" />
+  <title>Exercise Tracker</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Exercise Tracker</h1>
+  <p class="sub">by <a href="https://emant.altervista.org">em-ant</a> - 2018</p>
+  <p><span>POST</span> /api/exercise/new-user</p>
+  <form id="user" method="POST" action="/api/exercise/new-user">
+    <label>
+      <span>username*</span>
+      <input type="text" name="username" required />
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+  <p><span>POST</span> /api/exercise/add</p>
+  <form id="exercise" method="POST" action="/api/exercise/add">
+    <label>
+      <span>userId*</span>
+      <input type="text" name="userId" required/>
+    </label>
+    <label>
+      <span>description*</span>
+      <input type="text" name="description" required/>
+    </label>  
+    <label>
+      <span>duration*</span>
+      <input type="number" min="1" max="180" name="duration" required/>
+    </label>
+    <label>
+      <span>date</span>
+      <input type="date" name="date" />
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+  <p><span>GET</span> /api/exercise/add</p>
+  <form id="log" method="GET" action="/api/exercise/log">
+    <label>
+      <span>userId*</span>
+      <input type="text" name="userId" required/>
+    </label>
+    <label>
+      <span>limit</span>
+      <input type="number" min="1" name="limit" />
+    </label>
+    <label>
+      <span>from</span>
+      <input type="date" name="from" />
+    </label>
+    <label>
+      <span>to</span>
+      <input type="date" name="to" />
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
